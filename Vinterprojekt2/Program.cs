@@ -12,11 +12,13 @@ Player p = JsonSerializer.Deserialize<Player>(response.Content);
 Raylib.SetTargetFPS(60);
 Raylib.InitWindow(800,600, "GAME");
 
+Area hoth = new Area();
+
 while (!Raylib.WindowShouldClose())
 {
     Raylib.BeginDrawing();
         
-    
+    hoth.Draw();
 
     Raylib.EndDrawing();
 }
