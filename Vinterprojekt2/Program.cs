@@ -1,6 +1,6 @@
 ﻿global using Raylib_cs;
-using RestSharp;
-using System.Text.Json;
+global using RestSharp;
+global using System.Text.Json;
 
 RestClient starwarsClient = new RestClient("https://swapi.py4e.com/api/");
 RestRequest request = new RestRequest("people/1/");

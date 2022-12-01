@@ -2,6 +2,10 @@ using System;
 
 public class Characters
 {
+    public int HP = 100;
+   
+   public Weapon weapon;
+
     protected Rectangle rect;
 
     protected Color color;
@@ -21,6 +25,4 @@ public class Characters
      {
         
      }
-
-    public int HP = 100;
 }
