@@ -4,7 +4,7 @@ public class Characters
 {
     public int HP = 100;
    
-   public Weapon weapon;
+    public Weapon weapon;
 
     protected Rectangle rect;
 
@@ -13,7 +13,7 @@ public class Characters
 
     public Characters()
      {
-        rect = new Rectangle(0,0,32,32);
+        rect = new Rectangle(400,300,32,32);
      }
 
      public void Draw()
