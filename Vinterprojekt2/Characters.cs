@@ -6,7 +6,7 @@ public class Characters
    
     public Weapon weapon;
 
-    protected Rectangle rect;
+    public Rectangle rect;
 
     protected Color color;
 
@@ -21,10 +21,10 @@ public class Characters
         Raylib.DrawRectangleRec(rect, color);
      }
 
-       public void attack(Player target)
+       public void attack(Characters target)
     {
         int damage = weapon.GetDamage();
-        target.HP -= damage; 
+        target.HP =- damage; 
         target.HP = Math.Max(0, target.HP);
     }
 

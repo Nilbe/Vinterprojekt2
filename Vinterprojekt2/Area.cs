@@ -14,6 +14,11 @@ public class Area
     {
         player.Update();
         enemy.Update();
+
+        if (Raylib.CheckCollisionRecs(player.rect, enemy.rect))
+        {
+            player.attack(enemy);
+        }
     }
 
     public void Draw()
@@ -22,5 +27,6 @@ public class Area
         enemy.Draw();
 
         Raylib.DrawText(player.HP.ToString(), 50, 20, 25, Color.BLACK);
+        Raylib.DrawText(enemy.HP.ToString(), 700, 20, 25, Color.BLACK);
     }
 }
