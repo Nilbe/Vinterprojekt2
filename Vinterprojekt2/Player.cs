@@ -13,19 +13,19 @@ public class Player: Characters
   {
     if(Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT))
     {
-      rect.x++;
+      rect.x += 2;
     }
     if(Raylib.IsKeyDown(KeyboardKey.KEY_LEFT))
     {
-      rect.x -= 1;
+      rect.x -= 2;
     }
     if(Raylib.IsKeyDown(KeyboardKey.KEY_UP))
     {
-      rect.y -= 1;
+      rect.y -= 2;
     }
     if(Raylib.IsKeyDown(KeyboardKey.KEY_DOWN))
     {
-      rect.y++;
+      rect.y += 2;
     }
   }
 }

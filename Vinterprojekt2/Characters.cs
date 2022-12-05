@@ -21,6 +21,13 @@ public class Characters
         Raylib.DrawRectangleRec(rect, color);
      }
 
+       public void attack(Player target)
+    {
+        int damage = weapon.GetDamage();
+        target.HP -= damage; 
+        target.HP = Math.Max(0, target.HP);
+    }
+
      public virtual void Update() 
      {
         
