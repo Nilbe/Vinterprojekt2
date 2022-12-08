@@ -9,7 +9,7 @@ public class Player: Characters
         color = Color.BLUE;
     }
 
-      public override void Update()
+  public override void Update()
   {
     if(Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT))
     {

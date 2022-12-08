@@ -8,6 +8,9 @@ public class Area
     {
         player = new Player();
         enemy = new Enemy();
+
+        player.weapon = new weapon();
+        enemy.weapon = new weapon();
     }
 
     public void Update()
@@ -18,6 +21,7 @@ public class Area
         if (Raylib.CheckCollisionRecs(player.rect, enemy.rect))
         {
             player.attack(enemy);
+            enemy.attack(player);
         }
     }
 

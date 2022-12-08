@@ -3,8 +3,6 @@ using System;
 public class Characters
 {
     public int HP = 100;
-   
-    public Weapon weapon;
 
     public Rectangle rect;
 
@@ -21,15 +19,16 @@ public class Characters
         Raylib.DrawRectangleRec(rect, color);
      }
 
-       public void attack(Characters target)
+     public virtual void Update() 
+     {
+        
+     }
+
+      public weapon weapon;
+     public void attack(Characters target)
     {
         int damage = weapon.GetDamage();
         target.HP =- damage; 
         target.HP = Math.Max(0, target.HP);
     }
-
-     public virtual void Update() 
-     {
-        
-     }
 }

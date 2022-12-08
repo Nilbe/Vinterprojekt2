@@ -1,6 +1,6 @@
 using System;
 
-public class Weapon
+public class weapon
 {
     public string name = "lightsaber";
     public int maxDamage = 20;
