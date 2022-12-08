@@ -24,8 +24,8 @@ public class Characters
         
      }
 
-      public weapon weapon;
-     public void attack(Characters target)
+    public weapon weapon;
+    public void attack(Characters target)
     {
         int damage = weapon.GetDamage();
         target.HP =- damage; 
