@@ -20,8 +20,7 @@ public class Area
         player.Update();
         enemy.Update();
 
-        while(!hasAttacked)
-        {
+        
             if (Raylib.CheckCollisionRecs(player.rect, enemy.rect))
             {
                 player.attack(enemy);
@@ -34,7 +33,7 @@ public class Area
             {
                 hasAttacked = false;
             }
-        }
+        
     }
     
     public void Draw()
