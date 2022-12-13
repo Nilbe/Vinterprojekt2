@@ -15,26 +15,25 @@ Raylib.SetTargetFPS(60);
 Raylib.InitWindow(800,600, "GAME");
 
 Area hoth = new Area();
-gameEnd end = new gameEnd();
+//gameEnd end = new gameEnd();
 
-Player player = new Player();
-Enemy enemy = new Enemy();
+// Player player = new Player();
+// Enemy enemy = new Enemy();
 
 while (!Raylib.WindowShouldClose())
 {
     hoth.Update();
-    end.Update();
 
     Raylib.BeginDrawing();
     Raylib.ClearBackground(Color.WHITE);
     
-    if(player.HP > 0 && enemy.HP > 0)
-    {
         hoth.Draw();
-    }
-    else
-    {
-        end.Draw();
-    }
+    // if(player.HP > 0 && enemy.HP > 0)
+    // {
+    // }
+    //else 
+    // {
+    //     end.Draw();
+    // }
     Raylib.EndDrawing();
 }
