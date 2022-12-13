@@ -28,7 +28,7 @@ public class Characters
     public void attack(Characters target)
     {
         int damage = weapon.GetDamage();
-        target.HP =- damage; 
+        target.HP -= damage; 
         target.HP = Math.Max(0, target.HP);
     }
 }

@@ -14,28 +14,38 @@ public class Area
         player.weapon = new weapon();
         enemy.weapon = new weapon();
     }
- 
+
     public void Update()
     {
         player.Update();
         enemy.Update();
 
-        
-            if (Raylib.CheckCollisionRecs(player.rect, enemy.rect))
+        if (Raylib.CheckCollisionRecs(player.rect, enemy.rect))
+        {
+            if (hasAttacked)
             {
-                player.attack(enemy);
-                enemy.attack(player);
-
-                hasAttacked = true;
                 return;
             }
-            else if(!Raylib.CheckCollisionRecs(player.rect, enemy.rect))
-            {
-                hasAttacked = false;
-            }
+            player.attack(enemy);
+            enemy.attack(player);
+
+            hasAttacked = true;
+        }
+        else
+        {
+            hasAttacked = false;
+        }
         
+        if(player.HP == 0 && enemy.HP == 0)
+        {
+            
+        }
+        else if(player.HP == 0 || enemy.HP == 0) 
+        {
+           
+        }
     }
-    
+
     public void Draw()
     {
         player.Draw();
