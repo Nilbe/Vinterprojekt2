@@ -12,13 +12,9 @@ Player p = JsonSerializer.Deserialize<Player>(response.Content);
 
 
 Raylib.SetTargetFPS(60);
-Raylib.InitWindow(800,600, "GAME");
+Raylib.InitWindow(800,600, "Slagsmålsspelet i 2D");
 
 Area hoth = new Area();
-//gameEnd end = new gameEnd();
-
-// Player player = new Player();
-// Enemy enemy = new Enemy();
 
 while (!Raylib.WindowShouldClose())
 {
@@ -28,12 +24,6 @@ while (!Raylib.WindowShouldClose())
     Raylib.ClearBackground(Color.WHITE);
     
         hoth.Draw();
-    // if(player.HP > 0 && enemy.HP > 0)
-    // {
-    // }
-    //else 
-    // {
-    //     end.Draw();
-    // }
+
     Raylib.EndDrawing();
 }

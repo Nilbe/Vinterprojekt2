@@ -46,7 +46,7 @@ public class Area
         {
             end = 2;
         }
-        else if(enemy.HP ==0)
+        else if(enemy.HP == 0)
         {
             end = 3;
         }
@@ -57,7 +57,7 @@ public class Area
         if(end == 0)
         {
             player.Draw();
-            enemy.Draw();
+            // enemy.Draw();
 
             Raylib.DrawText(player.HP.ToString(), 50, 20, 25, Color.BLACK);
             Raylib.DrawText(enemy.HP.ToString(), 700, 20, 25, Color.BLACK);
