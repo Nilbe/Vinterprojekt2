@@ -8,7 +8,7 @@ public class Characters
 
     protected Color color;
 
-    protected Texture2D playerImage = Raylib.LoadTexture("luke.png");
+    public Texture2D playerImage = Raylib.LoadTexture("luke.png");
 
 
     public Characters()
