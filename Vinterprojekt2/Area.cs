@@ -4,8 +4,8 @@ public class Area
 {
     private Player player;
     private Enemy enemy;
+    private gameStart gameStart;
     private bool hasAttacked = false;
-    public int end = 0;
     private Vector2 textPos = new Vector2(350, 200);
 
     public Area()
@@ -15,6 +15,8 @@ public class Area
 
         player.weapon = new weapon();
         enemy.weapon = new weapon();
+
+        gameStart = new gameStart();
     }
 
     public void Update()
@@ -40,21 +42,21 @@ public class Area
 
         if(player.HP == 0 && enemy.HP == 0)
         {
-            end = 1;
+            gameStart.gameState = 2;
         }
         else if(player.HP == 0) 
         {
-            end = 2;
+            gameStart.gameState = 3;
         }
         else if(enemy.HP == 0)
         {
-            end = 3;
+            gameStart.gameState = 4;
         }
     }
 
     public void Draw()
     {
-        if(end == 0)
+        if(gameStart.gameState == 1)
         {
             player.Draw();
             enemy.Draw();
@@ -62,15 +64,15 @@ public class Area
             Raylib.DrawText(player.HP.ToString(), 50, 20, 25, Color.BLACK);
             Raylib.DrawText(enemy.HP.ToString(), 700, 20, 25, Color.BLACK);
         }
-        if(end == 1)
+        if(gameStart.gameState == 2)
         {
             Raylib.DrawTextEx(default, "TIE", textPos, 20, 10, Color.BLACK);
         }
-        if(end == 2)
+        if(gameStart.gameState == 3)
         {
             Raylib.DrawTextEx(default, "You Lose", textPos, 20, 10, Color.BLACK);
         }
-        if(end == 3)
+        if(gameStart.gameState == 4)
         {
             Raylib.DrawTextEx(default, "You Win", textPos, 20, 10, Color.BLACK);
         }
