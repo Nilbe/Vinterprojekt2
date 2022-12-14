@@ -5,8 +5,8 @@ public class Area
     private Player player;
     private Enemy enemy;
     private bool hasAttacked = false;
-    private int end = 0;
-    private Vector2 textPos = new Vector2(0, 0);
+    public int end = 0;
+    private Vector2 textPos = new Vector2(350, 200);
 
     public Area()
     {
@@ -57,7 +57,7 @@ public class Area
         if(end == 0)
         {
             player.Draw();
-            // enemy.Draw();
+            enemy.Draw();
 
             Raylib.DrawText(player.HP.ToString(), 50, 20, 25, Color.BLACK);
             Raylib.DrawText(enemy.HP.ToString(), 700, 20, 25, Color.BLACK);

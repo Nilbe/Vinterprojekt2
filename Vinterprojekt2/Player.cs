@@ -6,7 +6,8 @@ public class Player: Characters
 
     public Player()
     {
-        rect = new Rectangle(0, 0, playerImage.width, playerImage.height);
+        color = Color.BLUE;
+        rect = new Rectangle(400,300,32,32);
     }
 
   public override void Update()

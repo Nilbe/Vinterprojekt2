@@ -15,15 +15,25 @@ Raylib.SetTargetFPS(60);
 Raylib.InitWindow(800,600, "Slagsmålsspelet i 2D");
 
 Area hoth = new Area();
+// gameEnd end = new gameEnd();
 
 while (!Raylib.WindowShouldClose())
 {
     hoth.Update();
+    // end.Update();
 
     Raylib.BeginDrawing();
     Raylib.ClearBackground(Color.WHITE);
-    
+
         hoth.Draw();
+
+    // if(hoth.end == 0)
+    // {
+    // }
+    // if(hoth.end == 1)
+    // {
+    //     end.Draw();
+    // }
 
     Raylib.EndDrawing();
 }
