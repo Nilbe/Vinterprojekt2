@@ -14,25 +14,27 @@ Player p = JsonSerializer.Deserialize<Player>(response.Content);
 Raylib.SetTargetFPS(60);
 Raylib.InitWindow(800,600, "Slagsmålsspelet i 2D");
 
-gameStart start = new gameStart();
+// gameStart start = new gameStart();
 Area hoth = new Area();
 // gameEnd end = new gameEnd();
 
 while (!Raylib.WindowShouldClose())
 {
-    start.Update();
+    // start.Update();
     hoth.Update();
     // end.Update();
 
     Raylib.BeginDrawing();
     Raylib.ClearBackground(Color.WHITE);
 
-        hoth.Draw();
-    if(start.gameState == 0)
-    {
-        start.Draw();
-    }
-    if(start.gameState == 1)
+    // if(start.gameState == 0)
+    // {
+    //     start.Draw();
+    // }
+    // if(start.gameState == 1)
+    // {
+    // }
 
+        hoth.Draw();
     Raylib.EndDrawing();
 }

@@ -4,7 +4,8 @@ public class Area
 {
     private Player player;
     private Enemy enemy;
-    private gameStart gameStart;
+    // private gameStart gameStart;
+    public int end = 1;
     private bool hasAttacked = false;
     private Vector2 textPos = new Vector2(350, 200);
 
@@ -16,7 +17,7 @@ public class Area
         player.weapon = new weapon();
         enemy.weapon = new weapon();
 
-        gameStart = new gameStart();
+        // gameStart = new gameStart();
     }
 
     public void Update()
@@ -42,21 +43,25 @@ public class Area
 
         if(player.HP == 0 && enemy.HP == 0)
         {
-            gameStart.gameState = 2;
+            // gameStart.gameState = 2;
+            end = 2;
         }
         else if(player.HP == 0) 
         {
-            gameStart.gameState = 3;
+            // gameStart.gameState = 3;
+            end = 3;
         }
         else if(enemy.HP == 0)
         {
-            gameStart.gameState = 4;
+            // gameStart.gameState = 4;
+            end = 4;
         }
     }
 
     public void Draw()
     {
-        if(gameStart.gameState == 1)
+        // if(gameStart.gameState == 1)
+        if(end == 1)
         {
             player.Draw();
             enemy.Draw();
@@ -64,15 +69,18 @@ public class Area
             Raylib.DrawText(player.HP.ToString(), 50, 20, 25, Color.BLACK);
             Raylib.DrawText(enemy.HP.ToString(), 700, 20, 25, Color.BLACK);
         }
-        if(gameStart.gameState == 2)
+        // if(gameStart.gameState == 2)
+        if(end == 2)
         {
             Raylib.DrawTextEx(default, "TIE", textPos, 20, 10, Color.BLACK);
         }
-        if(gameStart.gameState == 3)
+        // if(gameStart.gameState == 3)
+        if(end == 3)
         {
             Raylib.DrawTextEx(default, "You Lose", textPos, 20, 10, Color.BLACK);
         }
-        if(gameStart.gameState == 4)
+        // if(gameStart.gameState == 4)
+        if(end == 4)
         {
             Raylib.DrawTextEx(default, "You Win", textPos, 20, 10, Color.BLACK);
         }
