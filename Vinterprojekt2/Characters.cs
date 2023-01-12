@@ -8,9 +8,6 @@ public class Characters
 
     protected Color color;
 
-   // public Texture2D playerImage = Raylib.LoadTexture("luke.png");
-
-
     public Characters()
      {
         rect = new Rectangle(0,0,32,32);
@@ -19,7 +16,6 @@ public class Characters
      public void Draw()
      {
         Raylib.DrawRectangleRec(rect, color);
-        //Raylib.DrawTexture(playerImage, (int)rect.x, (int)rect.y, Color.BLACK);
      }
 
      public virtual void Update() 
