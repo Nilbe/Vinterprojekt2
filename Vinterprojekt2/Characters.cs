@@ -2,9 +2,21 @@ using System;
 
 public class Characters
 {
-    public int HP = 100;
+    // ArrayList API = new ArrayList();
+    // API.Add(
+    // RestClient starwarsClient = new RestClient("https://swapi.py4e.com/api/");
+    // RestRequest request = new RestRequest("people/1/");
 
-    public Rectangle rect;
+    // RestResponse response = starwarsClient.GetAsync(request).Result;
+    // Player p = JsonSerializer.Deserialize<Player>(response.Content);
+    // );
+    // API.Add(
+    // RestClient starwarsClient = new RestClient("https://swapi.py4e.com/api/");
+    // RestRequest request = new RestRequest("people/13/");
+
+    // RestResponse response = starwarsClient.GetAsync(request).Result;
+    // Player p = JsonSerializer.Deserialize<Player>(response.Content);
+    // )
 
     protected Color color;
 
@@ -24,10 +36,14 @@ public class Characters
      }
 
     public weapon weapon;
-    public void attack(Characters target)
+    private static object starwarsClient;
+    private byte HP;
+    private Rectangle rect;
+
+    public byte attack(Characters target)
     {
         int damage = weapon.GetDamage();
-        target.HP -= damage; 
+        (target.HP -= damage); 
         target.HP = Math.Max(0, target.HP);
     }
 }

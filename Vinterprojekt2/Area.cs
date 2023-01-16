@@ -8,6 +8,8 @@ public class Area
     public int end = 1;
     private bool hasAttacked = false;
     private Vector2 textPos = new Vector2(350, 200);
+    private Vector2 textPosPHP = new Vector2(50, 20);
+    private Vector2 textPosEHP = new Vector2(500, 20);
 
     public Area()
     {
@@ -66,8 +68,11 @@ public class Area
             player.Draw();
             enemy.Draw();
 
-            Raylib.DrawText(player.HP.ToString(), 50, 20, 25, Color.BLACK);
+            Raylib.DrawTextEx(default, "Player HP:", textPosPHP, 20, 10, Color.BLACK);
+            Raylib.DrawText(player.HP.ToString(), 250, 20, 25, Color.BLACK);
+            Raylib.DrawTextEx(default, "Enemy HP:", textPosEHP, 20, 10, Color.BLACK);
             Raylib.DrawText(enemy.HP.ToString(), 700, 20, 25, Color.BLACK);
+
         }
         // if(gameStart.gameState == 2)
         if(end == 2)

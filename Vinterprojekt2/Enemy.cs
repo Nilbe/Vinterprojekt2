@@ -2,6 +2,9 @@ using System;
 
 public class Enemy: Characters
 {
+    internal Rectangle rect;
+    internal int HP;
+
     string name { get;set; }
 
     public Enemy()
