@@ -78,6 +78,7 @@ public class Area
         if(end == 2)
         {
             Raylib.DrawTextEx(default, "TIE", textPos, 20, 10, Color.BLACK);
+            
         }
         // if(gameStart.gameState == 3)
         if(end == 3)

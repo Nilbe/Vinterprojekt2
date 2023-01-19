@@ -21,26 +21,26 @@ public class Characters
     protected Color color;
 
     public Characters()
-     {
+    {
         rect = new Rectangle(0,0,32,32);
-     }
+    }
 
-     public void Draw()
-     {
+    public void Draw()
+    {
         Raylib.DrawRectangleRec(rect, color);
-     }
+    }
 
-     public virtual void Update() 
-     {
+    public virtual void Update() 
+    {
         
-     }
+    }
 
     public weapon weapon;
     private static object starwarsClient;
-    private byte HP;
+    private int HP;
     private Rectangle rect;
 
-    public byte attack(Characters target)
+    public void attack(Characters target)
     {
         int damage = weapon.GetDamage();
         (target.HP -= damage); 
