@@ -1,11 +1,11 @@
 using System;
 
-// RestClient starwarsClient = new RestClient("https://swapi.py4e.com/api/");
-// RestRequest request = new RestRequest("people/1/");
 
-// RestResponse response = starwarsClient.GetAsync(request).Result;
-// Player p = JsonSerializer.Deserialize<Player>(response.Content);
+RestClient starwarsClient = new RestClient("https://swapi.py4e.com/api/");
+RestRequest request = new RestRequest("people/1/");
 
+RestResponse response = starwarsClient.GetAsync(request).Result;
+Player player = JsonSerializer.Deserialize<Player>(response.Content);
 public class Player: Characters
 {
     internal Rectangle rect;
