@@ -1,5 +1,7 @@
 using System;
 
+
+
 public class Area
 {
     private Player player;
@@ -14,6 +16,12 @@ public class Area
 
     public Area()
     {
+        RestClient starwarsClient = new RestClient("https://swapi.py4e.com/api/");
+        RestRequest request = new RestRequest("people/1/");
+
+        RestResponse response = starwarsClient.GetAsync(request).Result;
+        Player p = JsonSerializer.Deserialize<Player>(response.Content);
+
         player = new Player();
         enemy = new Enemy();
 

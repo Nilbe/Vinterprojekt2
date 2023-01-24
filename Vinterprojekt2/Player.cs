@@ -1,14 +1,10 @@
 using System;
 
-
-RestClient starwarsClient = new RestClient("https://swapi.py4e.com/api/");
-RestRequest request = new RestRequest("people/1/");
-
-RestResponse response = starwarsClient.GetAsync(request).Result;
-Player player = JsonSerializer.Deserialize<Player>(response.Content);
 public class Player: Characters
 {
-    internal Rectangle rect;
+    Texture2D playerImage = Raylib.LoadTexture("luke.png");
+    // internal Rectangle rect;
+    public  Rectangle  rect = new Rectangle(400,300,32,32);
     internal int HP;
 
     public string name { get; set; }
@@ -19,8 +15,9 @@ public class Player: Characters
 
     public Player()
     {
-      color = Color.BLUE;
-      rect = new Rectangle(400,300,32,32);
+    //   color = Color.BLUE;
+    //   rect = new Rectangle(400,300,32,32);
+    Raylib.DrawTexture(playerImage, (int)rect.x, (int)rect.y, Color.WHITE);
     }
 
   public override void Update()
