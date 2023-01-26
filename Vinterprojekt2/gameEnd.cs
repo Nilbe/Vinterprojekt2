@@ -21,7 +21,6 @@
 //         else if(player.HP == 0) 
 //         {
 //             Raylib.DrawTextEx(default, "You Lose", textPos, 20, 10, Color.BLACK);
-        
 //         }
 //         else if(enemy.HP == 0)
 //         {

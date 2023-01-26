@@ -1,10 +1,7 @@
 using System;
 
-public class Enemy: Characters
+public class Enemy: Characters      //all information unik för enemy
 {
-    internal Rectangle rect;
-    internal int HP;
-
     string name { get;set; }
 
     public Enemy()

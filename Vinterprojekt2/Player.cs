@@ -2,12 +2,9 @@ using System;
 
 public class Player: Characters
 {
-    Texture2D playerImage = Raylib.LoadTexture("luke.png");
-    // internal Rectangle rect;
-    public  Rectangle  rect = new Rectangle(400,300,32,32);
-    internal int HP;
+    // Texture2D playerImage = Raylib.LoadTexture("luke.png");
 
-    public string name { get; set; }
+    public string name { get; set; }    //variblar vars information ska hämtas från en API
 
     public string height { get; set; }
 
@@ -15,12 +12,12 @@ public class Player: Characters
 
     public Player()
     {
-    //   color = Color.BLUE;
-    //   rect = new Rectangle(400,300,32,32);
-    Raylib.DrawTexture(playerImage, (int)rect.x, (int)rect.y, Color.WHITE);
+      color = Color.BLUE;
+      rect = new Rectangle(400,300,32,32);
+    // Raylib.DrawTexture(playerImage, (int)rect.x, (int)rect.y, Color.WHITE);
     }
 
-  public override void Update()
+  public override void Update()   //movement för spelaren
   {
     if(Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT))
     {

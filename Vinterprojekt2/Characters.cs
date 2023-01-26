@@ -1,6 +1,6 @@
 using System;
 
-public class Characters
+public class Characters     //all gemensam information för player och enemy
 {
 
     protected Color color;
@@ -21,10 +21,10 @@ public class Characters
     }
 
     public weapon weapon;
-    private int HP;
-    private Rectangle rect;
+    public int HP = 100;
+    public Rectangle rect;
 
-    public void attack(Characters target)
+    public void Attack(Characters target)       //funktion för att kunna attackera
     {
         int damage = weapon.GetDamage();
         target.HP -= damage; 

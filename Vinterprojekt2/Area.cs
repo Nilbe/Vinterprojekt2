@@ -1,7 +1,5 @@
 using System;
 
-
-
 public class Area
 {
     private Player player;
@@ -16,11 +14,11 @@ public class Area
 
     public Area()
     {
-        RestClient starwarsClient = new RestClient("https://swapi.py4e.com/api/");
-        RestRequest request = new RestRequest("people/1/");
+        // RestClient starwarsClient = new RestClient("https://swapi.py4e.com/api/");
+        // RestRequest request = new RestRequest("people/1/");
 
-        RestResponse response = starwarsClient.GetAsync(request).Result;
-        Player p = JsonSerializer.Deserialize<Player>(response.Content);
+        // RestResponse response = starwarsClient.GetAsync(request).Result;
+        // Player p = JsonSerializer.Deserialize<Player>(response.Content);
 
         player = new Player();
         enemy = new Enemy();
@@ -31,28 +29,28 @@ public class Area
         // gameStart = new gameStart();
     }
 
-    public void Update()
+    public void Update()    //logik för spelet
     {
         player.Update();
         enemy.Update();
 
-        if (Raylib.CheckCollisionRecs(player.rect, enemy.rect))
+        if (Raylib.CheckCollisionRecs(player.rect, enemy.rect))     //om spelaren kolliderar med fienden så gör dem skada på varandra en gång
         {
             if (hasAttacked)
             {
-                return;
+                return;     //om hasAttacked har utförts så ruturnerar den boolen till false
             }
-            player.attack(enemy);
-            enemy.attack(player);
+            player.Attack(enemy);
+            enemy.Attack(player);
 
             hasAttacked = true;
         }
         else
         {
-            hasAttacked = false;
+            hasAttacked = false;    
         }
 
-        if(player.HP == 0 && enemy.HP == 0)
+        if(player.HP == 0 && enemy.HP == 0)     //kollar om någon av karaktärerna har 0 hälsa kvar och säger då hur spelet ska sluta
         {
             // gameStart.gameState = 2;
             end = 2;
@@ -69,10 +67,10 @@ public class Area
         }
     }
 
-    public void Draw()
+    public void Draw()      //utritandet av karaktärerna och texten
     {
         // if(gameStart.gameState == 1)
-        if(end == 1)
+        if(end == 1)        //end 1 är spelet
         {
             player.Draw();
             enemy.Draw();
@@ -82,10 +80,10 @@ public class Area
             Raylib.DrawTextEx(default, "Enemy HP:", textPosEHP, 20, 10, Color.BLACK);
             Raylib.DrawText(enemy.HP.ToString(), 700, 20, 25, Color.BLACK);
 
-            Raylib.DrawTextEx(default, player.mass, textPosTEMP, 20, 10, Color.BLACK);
+            // Raylib.DrawTextEx(default, player.mass, textPosTEMP, 20, 10, Color.BLACK);
         }
         // if(gameStart.gameState == 2)
-        if(end == 2)
+        if(end == 2)        //de olika sluten till spelet
         {
             Raylib.DrawTextEx(default, "TIE", textPos, 20, 10, Color.BLACK);
             
