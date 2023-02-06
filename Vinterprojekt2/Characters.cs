@@ -2,7 +2,6 @@ using System;
 
 public class Characters     //all gemensam information för player och enemy
 {
-
     protected Color color;
 
     public Characters()
